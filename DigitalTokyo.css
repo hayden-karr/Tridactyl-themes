@@ -46,9 +46,6 @@
   border: 2px solid var(--blue);
   background: var(--tridactyl-bg);
   border-radius: 6px;
-  box-sizing: border-box !important;
-  min-height: 60px !important;
-  max-height: 80px !important;
 }
 
 #tridactyl-input {
@@ -62,8 +59,6 @@
   padding: 1rem;
   border: none;
   outline: none;
-  box-sizing: border-box !important;
-  min-height: 40px !important;
 }
 
 #completions table {
@@ -148,7 +143,7 @@
   padding: 1rem !important;
   padding-left: unset;
   padding-bottom: 0.4rem;
-  color: var(--blue);
+  color: var(--cyan);
 }
 
 #cmdline_iframe {
@@ -160,11 +155,7 @@
   width: 80% !important;
   box-shadow: rgba(0, 0, 0, 0.7) 0px 10px 30px !important;
   border-radius: 8px;
-  max-height: 60vh !important;
-  min-height: 60px !important;
-  box-sizing: border-box !important;
   font-family: var(--font) !important;
-  font-size: initial !important;
 }
 
 .TridactylStatusIndicator {
@@ -177,10 +168,7 @@
   padding: 0.8ex !important;
   color: var(--fg) !important;
   border-radius: 4px 4px 0 0;
-  box-sizing: border-box !important;
   font-family: var(--font) !important;
-  min-height: 30px !important;
-  line-height: 1.2 !important;
 }
 
 /* Focused/Active states */
@@ -208,15 +196,15 @@
   color: var(--blue-bright);
 }
 
-/* Additional Tokyo Night touches */
+/* Additional Tokyo Night touches with cyan/blue/pink palette */
 #completions .ExcmdCompletionSource .sectionHeader {
-  color: var(--purple);
+  color: var(--blue);
 }
 
 #completions .SettingsCompletionSource .sectionHeader {
-  color: var(--green);
+  color: var(--blue-bright);
 }
 
 #completions .HelpCompletionSource .sectionHeader {
-  color: var(--yellow);
+  color: var(--pink);
 }
