@@ -1,0 +1,222 @@
+:root {
+  /* Tokyo Night Colors */
+  --bg: #24283b;
+  --currentline: #414868;
+  --fg: #c0caf5;
+  --comment: #565f89;
+  --cyan: #7dcfff;
+  --green: #9ece6a;
+  --orange: #ff9e64;
+  --pink: #bb9af7;
+  --purple: #9d7cd8;
+  --red: #f7768e;
+  --yellow: #e0af68;
+  --blue: #7aa2f7;
+  --blue-bright: #2ac3de;
+  --font: monospace;
+
+  /* Tridactyl Variables */
+  --tridactyl-fg: var(--fg);
+  --tridactyl-bg: var(--bg);
+  --tridactyl-url-fg: var(--blue);
+  --tridactyl-url-bg: var(--bg);
+  --tridactyl-highlight-box-bg: var(--currentline);
+  --tridactyl-highlight-box-fg: var(--fg);
+  --tridactyl-of-fg: var(--fg);
+  --tridactyl-of-bg: var(--currentline);
+  --tridactyl-cmdl-fg: var(--fg);
+  --tridactyl-cmdl-font-family: var(--font);
+  --tridactyl-cmplt-font-family: var(--font);
+  --tridactyl-hintspan-font-family: var(--font);
+
+  /* Hint character tags */
+  --tridactyl-hintspan-fg: var(--bg) !important;
+  --tridactyl-hintspan-bg: var(--cyan) !important;
+
+  /* Element Highlights */
+  --tridactyl-hint-active-fg: none;
+  --tridactyl-hint-active-bg: none;
+  --tridactyl-hint-active-outline: none;
+  --tridactyl-hint-bg: none;
+  --tridactyl-hint-outline: none;
+}
+
+#command-line-holder {
+  order: 1;
+  border: 2px solid var(--blue);
+  background: var(--tridactyl-bg);
+  border-radius: 6px;
+  box-sizing: border-box !important;
+  min-height: 60px !important;
+  max-height: 80px !important;
+}
+
+#tridactyl-input {
+  padding: 1rem;
+  color: var(--tridactyl-fg);
+  width: 90%;
+  font-size: 1.5rem;
+  line-height: 1.5;
+  background: var(--tridactyl-bg);
+  padding-left: unset;
+  padding: 1rem;
+  border: none;
+  outline: none;
+  box-sizing: border-box !important;
+  min-height: 40px !important;
+}
+
+#completions table {
+  font-size: 0.8rem;
+  font-weight: 200;
+  border-spacing: 0;
+  table-layout: fixed;
+  padding: 1rem;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+}
+
+#completions > div {
+  max-height: calc(20 * var(--option-height));
+  min-height: calc(10 * var(--option-height));
+}
+
+/* COMPLETIONS */
+#completions {
+  --option-height: 1.4em;
+  color: var(--tridactyl-fg);
+  background: var(--tridactyl-bg);
+  display: inline-block;
+  font-size: unset;
+  font-weight: 200;
+  overflow: hidden;
+  width: 100%;
+  border-top: unset;
+  order: 2;
+  border-radius: 0 0 6px 6px;
+}
+
+#completions .HistoryCompletionSource {
+  max-height: unset;
+  min-height: unset;
+}
+
+#completions .HistoryCompletionSource table {
+  width: 100%;
+  font-size: 9pt;
+  border-spacing: 0;
+  table-layout: fixed;
+}
+
+#completions .BmarkCompletionSource {
+  max-height: unset;
+  min-height: unset;
+}
+
+#completions table tr td.prefix,
+#completions table tr td.privatewindow,
+#completions table tr td.container,
+#completions table tr td.icon {
+  display: none;
+}
+
+#completions .BufferCompletionSource table {
+  width: unset;
+  font-size: unset;
+  border-spacing: unset;
+  table-layout: unset;
+}
+
+#completions table tr .title {
+  width: 50%;
+}
+
+#completions table tr {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+#completions table tr .url {
+  color: var(--cyan);
+}
+
+#completions .sectionHeader {
+  background: unset;
+  font-weight: bold;
+  border-bottom: 1px solid var(--currentline);
+  padding: 1rem !important;
+  padding-left: unset;
+  padding-bottom: 0.4rem;
+  color: var(--blue);
+}
+
+#cmdline_iframe {
+  position: fixed !important;
+  bottom: unset;
+  top: 25% !important;
+  left: 10% !important;
+  z-index: 2147483647 !important;
+  width: 80% !important;
+  box-shadow: rgba(0, 0, 0, 0.7) 0px 10px 30px !important;
+  border-radius: 8px;
+  max-height: 60vh !important;
+  min-height: 60px !important;
+  box-sizing: border-box !important;
+  font-family: var(--font) !important;
+  font-size: initial !important;
+}
+
+.TridactylStatusIndicator {
+  position: fixed !important;
+  bottom: 0 !important;
+  background: var(--tridactyl-bg) !important;
+  border: unset !important;
+  border: 1px var(--blue) solid !important;
+  font-size: 12pt !important;
+  padding: 0.8ex !important;
+  color: var(--fg) !important;
+  border-radius: 4px 4px 0 0;
+  box-sizing: border-box !important;
+  font-family: var(--font) !important;
+  min-height: 30px !important;
+  line-height: 1.2 !important;
+}
+
+/* Focused/Active states */
+#completions .focused {
+  background: var(--pink);
+  color: var(--bg);
+}
+
+#completions .focused .url {
+  background: var(--pink);
+  color: var(--bg);
+}
+
+#completions .focused .title {
+  color: var(--bg);
+}
+
+/* Hover states */
+#completions table tr:hover {
+  background: var(--currentline);
+  color: var(--fg);
+}
+
+#completions table tr:hover .url {
+  color: var(--blue-bright);
+}
+
+/* Additional Tokyo Night touches */
+#completions .ExcmdCompletionSource .sectionHeader {
+  color: var(--purple);
+}
+
+#completions .SettingsCompletionSource .sectionHeader {
+  color: var(--green);
+}
+
+#completions .HelpCompletionSource .sectionHeader {
+  color: var(--yellow);
+}
